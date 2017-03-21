@@ -1,5 +1,8 @@
 {
-  "name": "juce-audio-plugin-client",
+  "name": "juce-audio-processors",
   "dependencies": {
+    "juce-audio-basics": "4.3.1",
+    "juce-gui-basics": "4.3.1",
+    "juce-gui-extra": "4.3.1"
   }
 }
