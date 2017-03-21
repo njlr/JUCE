@@ -1,9 +1,6 @@
 {
-  "name": "juce-audio-utils",
+  "name": "juce-opengl",
   "dependencies": {
-    "juce-gui-basics": "4.3.1",
-    "juce-audio-devices": "4.3.1",
-    "juce-audio-formats": "4.3.1",
-    "juce-audio-processors": "4.3.1"
+    "juce-gui-extra": "4.3.1"
   }
 }

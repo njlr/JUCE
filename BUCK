@@ -1,30 +1,38 @@
 include_defs('//BUCKAROO_DEPS')
 
 macos_linker_flags = [
-  '-framework', 'DiscRecording',
+  '-framework', 'OpenGL',
 ]
 
 ios_linker_flags = [
-  '-framework', 'CoreAudioKit',
+  '-framework', 'OpenGLES',
+]
+
+linux_linker_flags = [
+  '-lGL',
+]
+
+mingw_linker_flags = [
+  '-lopengl32',
 ]
 
 cxx_library(
-  name = 'juce-audio-utils',
-  header_namespace = 'juce_audio_utils',
+  name = 'juce-opengl',
+  header_namespace = 'juce_opengl',
   exported_headers = subdir_glob([
-    ('modules/juce_audio_utils', '**/*.hpp'),
-    ('modules/juce_audio_utils', '**/*.h'),
+    ('modules/juce_opengl', '**/*.hpp'),
+    ('modules/juce_opengl', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_audio_utils', '**/*.cpp'),
-    ('modules/juce_audio_utils', '**/*.mm'),
+    ('modules/juce_opengl', '**/*.cpp'),
+    ('modules/juce_opengl', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_audio_utils/juce_audio_utils.mm']),
-    ('^macos.*', ['modules/juce_audio_utils/juce_audio_utils.mm']),
-    ('^linux.*', ['modules/juce_audio_utils/juce_audio_utils.cpp']),
-    ('^windows.*', ['modules/juce_audio_utils/juce_audio_utils.cpp']),
-    ('^ios.*', ['modules/juce_audio_utils/juce_audio_utils.mm']),
+    ('default', ['modules/juce_opengl/juce_opengl.mm']),
+    ('^macos.*', ['modules/juce_opengl/juce_opengl.mm']),
+    ('^linux.*', ['modules/juce_opengl/juce_opengl.cpp']),
+    ('^windows.*', ['modules/juce_opengl/juce_opengl.cpp']),
+    ('^ios.*', ['modules/juce_opengl/juce_opengl.mm']),
   ],
   compiler_flags = [
     '-std=c++14',
@@ -36,8 +44,9 @@ cxx_library(
     ('default', macos_linker_flags),
     ('^ios.*', ios_linker_flags),
     ('^macos.*', macos_linker_flags),
-    ('^linux.*', []),
+    ('^linux.*', linux_linker_flags),
     ('^windows.*', []),
+    ('^mingw.*', mingw_linker_flags),
   ],
   visibility = [
     'PUBLIC',
