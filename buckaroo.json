@@ -1,6 +1,6 @@
 {
-  "name": "juce-gui-extra",
+  "name": "juce-tracktion-marketplace",
   "dependencies": {
-    "juce-gui-basics": "4.3.1"
+    "juce-cryptography": "4.3.1"
   }
 }

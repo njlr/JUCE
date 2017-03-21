@@ -1,39 +1,24 @@
 include_defs('//BUCKAROO_DEPS')
 
-macos_linker_flags = [
-  '-framework', 'WebKit',
-]
-
 cxx_library(
-  name = 'juce-gui-extra',
-  header_namespace = 'juce_gui_extra',
+  name = 'juce-tracktion-marketplace',
+  header_namespace = 'juce_tracktion_marketplace',
   exported_headers = subdir_glob([
-    ('modules/juce_gui_extra', '**/*.hpp'),
-    ('modules/juce_gui_extra', '**/*.h'),
+    ('modules/juce_tracktion_marketplace', '**/*.hpp'),
+    ('modules/juce_tracktion_marketplace', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_gui_extra', '**/*.cpp'),
-    ('modules/juce_gui_extra', '**/*.mm'),
+    ('modules/juce_tracktion_marketplace', '**/*.cpp'),
+    ('modules/juce_tracktion_marketplace', '**/*.mm'),
   ]),
-  platform_srcs = [
-    ('default', ['modules/juce_gui_extra/juce_gui_extra.mm']),
-    ('^macos.*', ['modules/juce_gui_extra/juce_gui_extra.mm']),
-    ('^linux.*', ['modules/juce_gui_extra/juce_gui_extra.cpp']),
-    ('^windows.*', ['modules/juce_gui_extra/juce_gui_extra.cpp']),
-    ('^ios.*', ['modules/juce_gui_extra/juce_gui_extra.mm']),
+  srcs = [
+    'modules/juce_tracktion_marketplace/juce_tracktion_marketplace.cpp',
   ],
   compiler_flags = [
     '-std=c++14',
     '-DNDEBUG',
     '-DJUCE_STANDALONE_APPLICATION',
     '-DJUCE_GLOBAL_MODULE_SETTINGS_INCLUDED',
-  ],
-  platform_linker_flags = [
-    ('default', macos_linker_flags),
-    ('^macos.*', macos_linker_flags),
-    ('^linux.*', []),
-    ('^windows.*', []),
-    ('^ios.*', []),
   ],
   visibility = [
     'PUBLIC',
