@@ -1,6 +1,7 @@
 {
-  "name": "juce-audio-formats",
+  "name": "juce-blocks-basics",
   "dependencies": {
-    "juce-audio-basics": "4.3.1"
+    "juce-events": "4.3.1",
+    "juce-audio-devices": "4.3.1"
   }
 }
