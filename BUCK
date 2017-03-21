@@ -2,7 +2,7 @@ include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
   name = 'juce-core',
-  header_namespace = '',
+  header_namespace = 'juce_core',
   exported_headers = subdir_glob([
     ('modules/juce_core', '**/*.hpp'),
     ('modules/juce_core', '**/*.h'),
