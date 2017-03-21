@@ -1,7 +1,6 @@
 {
-  "name": "juce-audio-utils",
+  "name": "juce-gui-extra",
   "dependencies": {
-    "juce-graphics": "4.3.1",
-    "juce-data-structures": "4.3.1"
+    "juce-gui-basics": "4.3.1"
   }
 }

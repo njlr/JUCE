@@ -1,38 +1,26 @@
 include_defs('//BUCKAROO_DEPS')
 
-ios_linker_flags = [
-  '-framework', 'UIKit',
-]
-
 macos_linker_flags = [
-  '-framework', 'Cocoa',
-  '-framework', 'Carbon',
-  '-framework', 'QuartzCore',
-]
-
-linux_linker_flags = [
-  '-lx11',
-  '-lxinerama',
-  '-lxext',
+  '-framework', 'WebKit',
 ]
 
 cxx_library(
-  name = 'juce-gui-basics',
-  header_namespace = 'juce_gui_basics',
+  name = 'juce-gui-extra',
+  header_namespace = 'juce_gui_extra',
   exported_headers = subdir_glob([
-    ('modules/juce_gui_basics', '**/*.hpp'),
-    ('modules/juce_gui_basics', '**/*.h'),
+    ('modules/juce_gui_extra', '**/*.hpp'),
+    ('modules/juce_gui_extra', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_gui_basics', '**/*.cpp'),
-    ('modules/juce_gui_basics', '**/*.mm'),
+    ('modules/juce_gui_extra', '**/*.cpp'),
+    ('modules/juce_gui_extra', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_gui_basics/juce_gui_basics.mm']),
-    ('^macos.*', ['modules/juce_gui_basics/juce_gui_basics.mm']),
-    ('^linux.*', ['modules/juce_gui_basics/juce_gui_basics.cpp']),
-    ('^windows.*', ['modules/juce_gui_basics/juce_gui_basics.cpp']),
-    ('^ios.*', ['modules/juce_gui_basics/juce_gui_basics.mm']),
+    ('default', ['modules/juce_gui_extra/juce_gui_extra.mm']),
+    ('^macos.*', ['modules/juce_gui_extra/juce_gui_extra.mm']),
+    ('^linux.*', ['modules/juce_gui_extra/juce_gui_extra.cpp']),
+    ('^windows.*', ['modules/juce_gui_extra/juce_gui_extra.cpp']),
+    ('^ios.*', ['modules/juce_gui_extra/juce_gui_extra.mm']),
   ],
   compiler_flags = [
     '-std=c++14',
@@ -43,9 +31,9 @@ cxx_library(
   platform_linker_flags = [
     ('default', macos_linker_flags),
     ('^macos.*', macos_linker_flags),
-    ('^linux.*', linux_linker_flags),
+    ('^linux.*', []),
     ('^windows.*', []),
-    ('^ios.*', ios_linker_flags),
+    ('^ios.*', []),
   ],
   visibility = [
     'PUBLIC',
