@@ -1,6 +1,9 @@
 {
-  "name": "juce-audio-basics",
+  "name": "juce-audio-utils",
   "dependencies": {
-    "juce-core": "4.3.1"
+    "juce-gui-basics": "4.3.1",
+    "juce-audio-devices": "4.3.1",
+    "juce-audio-formats": "4.3.1",
+    "juce-audio-processors": "4.3.1"
   }
 }
