@@ -1,6 +1,8 @@
 {
-  "name": "juce-tracktion-marketplace",
+  "name": "juce-video",
   "dependencies": {
-    "juce-cryptography": "4.3.1"
+    "juce-data-structures": "4.3.1",
+    "juce-cryptography": "4.3.1",
+    "juce-gui-extra": "4.3.1"
   }
 }
