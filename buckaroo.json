@@ -1,4 +1,6 @@
 {
   "name": "juce-box2d",
-  "dependencies": {}
+  "dependencies": {
+    "juce-graphics": "4.3.1"
+  }
 }

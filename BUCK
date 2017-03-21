@@ -2,7 +2,7 @@ include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
   name = 'juce-box2d',
-  header_namespace = '',
+  header_namespace = 'juce_box2d',
   exported_headers = subdir_glob([
     ('modules/juce_box2d', '**/*.hpp'),
     ('modules/juce_box2d', '**/*.h'),
