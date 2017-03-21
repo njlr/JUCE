@@ -1,21 +1,21 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'juce-core',
-  header_namespace = 'juce_core',
+  name = 'juce-events',
+  header_namespace = 'juce_events',
   exported_headers = subdir_glob([
-    ('modules/juce_core', '**/*.hpp'),
-    ('modules/juce_core', '**/*.h'),
+    ('modules/juce_events', '**/*.hpp'),
+    ('modules/juce_events', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_core', '**/*.cpp'),
-    ('modules/juce_core', '**/*.mm'),
+    ('modules/juce_events', '**/*.cpp'),
+    ('modules/juce_events', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_core/juce_core.mm']),
-    ('^macos.*', ['modules/juce_core/juce_core.mm']),
-    ('^linux.*', ['modules/juce_core/juce_core.cpp']),
-    ('^windows.*', ['modules/juce_core/juce_core.cpp']),
+    ('default', ['modules/juce_events/juce_events.mm']),
+    ('^macos.*', ['modules/juce_events/juce_events.mm']),
+    ('^linux.*', ['modules/juce_events/juce_events.cpp']),
+    ('^windows.*', ['modules/juce_events/juce_events.cpp']),
   ],
   compiler_flags = [
     '-std=c++14',
