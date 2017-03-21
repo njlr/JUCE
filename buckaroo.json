@@ -1,6 +1,7 @@
 {
-  "name": "juce_cryptography",
+  "name": "juce-osc",
   "dependencies": {
-    "juce-core": "4.3.1"
+    "juce-core": "4.3.1",
+    "juce-events": "4.3.1"
   }
 }

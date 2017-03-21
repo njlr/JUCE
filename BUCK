@@ -1,18 +1,18 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'juce-cryptography',
-  header_namespace = 'juce_cryptography',
+  name = 'juce-osc',
+  header_namespace = 'juce_osc',
   exported_headers = subdir_glob([
-    ('modules/juce_cryptography', '**/*.hpp'),
-    ('modules/juce_cryptography', '**/*.h'),
+    ('modules/juce_osc', '**/*.hpp'),
+    ('modules/juce_osc', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_cryptography', '**/*.cpp'),
-    ('modules/juce_cryptography', '**/*.mm'),
+    ('modules/juce_osc', '**/*.cpp'),
+    ('modules/juce_osc', '**/*.mm'),
   ]),
   srcs = [
-    'modules/juce_cryptography/juce_cryptography.cpp',
+    'modules/juce_osc/juce_osc.cpp',
   ],
   compiler_flags = [
     '-std=c++14',
