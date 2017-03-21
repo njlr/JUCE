@@ -1,6 +1,6 @@
 {
-  "name": "juce-box2d",
+  "name": "juce-data-structures",
   "dependencies": {
-    "juce-graphics": "4.3.1"
+    "juce-events": "4.3.1"
   }
 }

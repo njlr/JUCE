@@ -1,18 +1,18 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'juce-box2d',
-  header_namespace = 'juce_box2d',
+  name = 'juce-data-structures',
+  header_namespace = 'juce_data_structures',
   exported_headers = subdir_glob([
-    ('modules/juce_box2d', '**/*.hpp'),
-    ('modules/juce_box2d', '**/*.h'),
+    ('modules/juce_data_structures', '**/*.hpp'),
+    ('modules/juce_data_structures', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_box2d', '**/*.cpp'),
-    ('modules/juce_box2d', '**/*.mm'),
+    ('modules/juce_data_structures', '**/*.cpp'),
+    ('modules/juce_data_structures', '**/*.mm'),
   ]),
   srcs = [
-    'modules/juce_box2d/juce_box2d.cpp',
+    'modules/juce_data_structures/juce_data_structures.cpp',
   ],
   compiler_flags = [
     '-std=c++14',
