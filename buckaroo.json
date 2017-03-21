@@ -1,4 +1,6 @@
 {
-  "name": "juce-core",
-  "dependencies": {}
+  "name": "juce-graphics",
+  "dependencies": {
+    "juce-core": "4.3.1"
+  }
 }

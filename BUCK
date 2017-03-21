@@ -1,21 +1,21 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'juce-core',
+  name = 'juce-graphics',
   header_namespace = '',
   exported_headers = subdir_glob([
-    ('modules/juce_core', '**/*.hpp'),
-    ('modules/juce_core', '**/*.h'),
+    ('modules/juce_graphics', '**/*.hpp'),
+    ('modules/juce_graphics', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_core', '**/*.cpp'),
-    ('modules/juce_core', '**/*.mm'),
+    ('modules/juce_graphics', '**/*.cpp'),
+    ('modules/juce_graphics', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_core/juce_core.mm']),
-    ('^macos.*', ['modules/juce_core/juce_core.mm']),
-    ('^linux.*', ['modules/juce_core/juce_core.cpp']),
-    ('^windows.*', ['modules/juce_core/juce_core.cpp']),
+    ('default', ['modules/juce_graphics/juce_graphics.mm']),
+    ('^macos.*', ['modules/juce_graphics/juce_graphics.mm']),
+    ('^linux.*', ['modules/juce_graphics/juce_graphics.cpp']),
+    ('^windows.*', ['modules/juce_graphics/juce_graphics.cpp']),
   ],
   compiler_flags = [
     '-std=c++14',
