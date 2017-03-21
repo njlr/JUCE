@@ -1,27 +1,43 @@
 include_defs('//BUCKAROO_DEPS')
 
 macos_linker_flags = [
-  '-framework', 'QTKit',
-  '-framework', 'QuickTime',
+  '-framework', 'CoreAudio',
+  '-framework', 'CoreMIDI',
+  '-framework', 'AudioToolbox',
+]
+
+ios_linker_flags = [
+  '-framework', 'CoreAudio',
+  '-framework', 'CoreMIDI',
+  '-framework', 'AudioToolbox',
+  '-framework', 'AVFoundation',
+]
+
+linux_linker_flags = [
+  '-lalsa',
+]
+
+mingw_linker_flags = [
+  '-lwinmm',
 ]
 
 cxx_library(
-  name = 'juce-video',
-  header_namespace = 'juce_video',
+  name = 'juce-audio-devices',
+  header_namespace = 'juce_audio_devices',
   exported_headers = subdir_glob([
-    ('modules/juce_video', '**/*.hpp'),
-    ('modules/juce_video', '**/*.h'),
+    ('modules/juce_audio_devices', '**/*.hpp'),
+    ('modules/juce_audio_devices', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_video', '**/*.cpp'),
-    ('modules/juce_video', '**/*.mm'),
+    ('modules/juce_audio_devices', '**/*.cpp'),
+    ('modules/juce_audio_devices', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_video/juce_video.mm']),
-    ('^macos.*', ['modules/juce_video/juce_video.mm']),
-    ('^linux.*', ['modules/juce_video/juce_video.cpp']),
-    ('^windows.*', ['modules/juce_video/juce_video.cpp']),
-    ('^ios.*', ['modules/juce_video/juce_video.mm']),
+    ('default', ['modules/juce_audio_devices/juce_audio_devices.mm']),
+    ('^macos.*', ['modules/juce_audio_devices/juce_audio_devices.mm']),
+    ('^linux.*', ['modules/juce_audio_devices/juce_audio_devices.cpp']),
+    ('^windows.*', ['modules/juce_audio_devices/juce_audio_devices.cpp']),
+    ('^ios.*', ['modules/juce_audio_devices/juce_audio_devices.mm']),
   ],
   compiler_flags = [
     '-std=c++14',
@@ -32,9 +48,10 @@ cxx_library(
   platform_linker_flags = [
     ('default', macos_linker_flags),
     ('^macos.*', macos_linker_flags),
-    ('^linux.*', []),
+    ('^linux.*', linux_linker_flags),
     ('^windows.*', []),
-    ('^ios.*', []),
+    ('^mingw.*', mingw_linker_flags),
+    ('^ios.*', ios_linker_flags),
   ],
   visibility = [
     'PUBLIC',

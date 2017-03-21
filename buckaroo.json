@@ -1,8 +1,7 @@
 {
   "name": "juce-video",
   "dependencies": {
-    "juce-data-structures": "4.3.1",
-    "juce-cryptography": "4.3.1",
-    "juce-gui-extra": "4.3.1"
+    "juce-audio-basics": "4.3.1",
+    "juce-events": "4.3.1"
   }
 }
