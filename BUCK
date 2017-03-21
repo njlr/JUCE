@@ -3,14 +3,13 @@ include_defs('//BUCKAROO_DEPS')
 macos_linker_flags = [
   '-framework', 'CoreAudio',
   '-framework', 'CoreMIDI',
+  '-framework', 'QuartzCore',
   '-framework', 'AudioToolbox',
 ]
 
 ios_linker_flags = [
-  '-framework', 'CoreAudio',
-  '-framework', 'CoreMIDI',
+  '-framework', 'QuartzCore',
   '-framework', 'AudioToolbox',
-  '-framework', 'AVFoundation',
 ]
 
 linux_linker_flags = [
@@ -22,22 +21,22 @@ mingw_linker_flags = [
 ]
 
 cxx_library(
-  name = 'juce-audio-devices',
-  header_namespace = 'juce_audio_devices',
+  name = 'juce-audio-formats',
+  header_namespace = 'juce_audio_formats',
   exported_headers = subdir_glob([
-    ('modules/juce_audio_devices', '**/*.hpp'),
-    ('modules/juce_audio_devices', '**/*.h'),
+    ('modules/juce_audio_formats', '**/*.hpp'),
+    ('modules/juce_audio_formats', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_audio_devices', '**/*.cpp'),
-    ('modules/juce_audio_devices', '**/*.mm'),
+    ('modules/juce_audio_formats', '**/*.cpp'),
+    ('modules/juce_audio_formats', '**/*.mm'),
   ]),
   platform_srcs = [
-    ('default', ['modules/juce_audio_devices/juce_audio_devices.mm']),
-    ('^macos.*', ['modules/juce_audio_devices/juce_audio_devices.mm']),
-    ('^linux.*', ['modules/juce_audio_devices/juce_audio_devices.cpp']),
-    ('^windows.*', ['modules/juce_audio_devices/juce_audio_devices.cpp']),
-    ('^ios.*', ['modules/juce_audio_devices/juce_audio_devices.mm']),
+    ('default', ['modules/juce_audio_formats/juce_audio_formats.mm']),
+    ('^macos.*', ['modules/juce_audio_formats/juce_audio_formats.mm']),
+    ('^linux.*', ['modules/juce_audio_formats/juce_audio_formats.cpp']),
+    ('^windows.*', ['modules/juce_audio_formats/juce_audio_formats.cpp']),
+    ('^ios.*', ['modules/juce_audio_formats/juce_audio_formats.mm']),
   ],
   compiler_flags = [
     '-std=c++14',

@@ -1,7 +1,6 @@
 {
-  "name": "juce-video",
+  "name": "juce-audio-formats",
   "dependencies": {
-    "juce-audio-basics": "4.3.1",
-    "juce-events": "4.3.1"
+    "juce-audio-basics": "4.3.1"
   }
 }
