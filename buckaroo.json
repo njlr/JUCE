@@ -1,7 +1,5 @@
 {
-  "name": "juce-blocks-basics",
+  "name": "juce-audio-plugin-client",
   "dependencies": {
-    "juce-events": "4.3.1",
-    "juce-audio-devices": "4.3.1"
   }
 }

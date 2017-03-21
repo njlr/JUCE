@@ -1,18 +1,18 @@
 include_defs('//BUCKAROO_DEPS')
 
 cxx_library(
-  name = 'juce-blocks-basics',
-  header_namespace = 'juce_blocks_basics',
+  name = 'juce-audio-plugin-client',
+  header_namespace = 'juce_audio_plugin_client',
   exported_headers = subdir_glob([
-    ('modules/juce_blocks_basics', '**/*.hpp'),
-    ('modules/juce_blocks_basics', '**/*.h'),
+    ('modules/juce_audio_plugin_client', '**/*.hpp'),
+    ('modules/juce_audio_plugin_client', '**/*.h'),
   ]),
   headers = subdir_glob([
-    ('modules/juce_blocks_basics', '**/*.cpp'),
-    ('modules/juce_blocks_basics', '**/*.mm'),
+    ('modules/juce_audio_plugin_client', '**/*.cpp'),
+    ('modules/juce_audio_plugin_client', '**/*.mm'),
   ]),
   srcs = [
-    'modules/juce_blocks_basics/juce_blocks_basics.cpp',
+    'modules/juce_audio_plugin_client/juce_audio_plugin_client.cpp',
   ],
   compiler_flags = [
     '-std=c++14',
